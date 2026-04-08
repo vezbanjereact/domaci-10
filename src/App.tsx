@@ -36,16 +36,16 @@ function App() {
 
     switch (currency) {
       case "USD":
-        setResult(amount * import.meta.env.VITE_CURRENCY_USD);
+        setResult(amount / import.meta.env.VITE_CURRENCY_USD);
         break;
       case "EUR":
-        setResult(amount * import.meta.env.VITE_CURRENCY_EUR);
+        setResult(amount / import.meta.env.VITE_CURRENCY_EUR);
         break;
       case "GBP":
-        setResult(amount * import.meta.env.VITE_CURRENCY_GBP);
+        setResult(amount / import.meta.env.VITE_CURRENCY_GBP);
         break;
       case "RUB":
-        setResult(amount * import.meta.env.VITE_CURRENCY_RUB);
+        setResult(amount / import.meta.env.VITE_CURRENCY_RUB);
         break;
 
       default:
@@ -56,10 +56,12 @@ function App() {
   return (
     <>
       <form
-        className="flex flex-col gap-3 items-center"
+        className="flex flex-col gap-3 justify-center items-center h-screen"
         onSubmit={handleSubmit}
       >
+        <label htmlFor="iznos">Iznos u dinarima: </label>
         <input
+          id="iznos"
           type="text"
           className="border-2 rounded-md"
           onChange={handleChangeInput}
